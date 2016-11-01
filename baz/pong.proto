@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package baz;
+
+import "foo/base.proto";
+
+message Pong {
+  optional foo.Base base = 1;
+  optional string status = 2;
+  optional string payload = 3;
+  // ... other fields ...
+}
+

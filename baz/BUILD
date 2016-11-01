@@ -1,15 +1,14 @@
 load("@protobuf//:protobuf.bzl", "cc_proto_library")
 
 cc_proto_library(
-    name = "base_proto",
+    name = "pong_proto",
     srcs = [
-        "base.proto",
+        "pong.proto",
+    ],
+    deps = [
+        "//foo:base_proto",
     ],
     protoc = "@protobuf//:protoc",
     default_runtime = "@protobuf//:protobuf",
-    visibility = [
-        "//bar:__pkg__",
-        "//baz:__pkg__",
-    ],
 )
 
