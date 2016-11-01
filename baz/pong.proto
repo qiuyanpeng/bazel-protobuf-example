@@ -5,7 +5,12 @@ package baz;
 import "foo/base.proto";
 
 message Pong {
+  // Notice the difference between this (including Base as submessage)
+  // and Ping (extending Base).
+  // See https://developers.google.com/protocol-buffers/docs/proto#other
+  // for details.
   optional foo.Base base = 1;
+
   optional string status = 2;
   optional string payload = 3;
   // ... other fields ...
