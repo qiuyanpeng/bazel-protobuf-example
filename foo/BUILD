@@ -1,15 +1,22 @@
-load("@protobuf//:protobuf.bzl", "cc_proto_library")
+load("@protobuf//:protobuf.bzl", "cc_proto_library", "py_proto_library")
+
+package(default_visibility = ["//visibility:public"])
 
 cc_proto_library(
-    name = "base_proto",
+    name = "base_cc_proto",
     srcs = [
         "base.proto",
     ],
     protoc = "@protobuf//:protoc",
     default_runtime = "@protobuf//:protobuf",
-    visibility = [
-        "//bar:__pkg__",
-        "//baz:__pkg__",
+)
+
+py_proto_library(
+    name = "base_py_proto",
+    srcs = [
+        "base.proto",
     ],
+    protoc = "@protobuf//:protoc",
+    default_runtime = "@protobuf//:protobuf_python",
 )
 
