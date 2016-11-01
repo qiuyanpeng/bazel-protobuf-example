@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package bar;
+
+import "foo/base.proto";
+
+message Ping {
+  extend foo.Base {
+    optional int32 ping_ext  = 1234;
+    // ... other extensions...
+    // one message can extends multiple messages
+  }
+  optional string status = 1;
+  optional string payload = 2;
+  // ... other fields ...
+}
+

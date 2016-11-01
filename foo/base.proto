@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package foo;
+
+message Base {
+  optional string id = 1;
+  optional string name = 2;
+  // ... other fields ...
+  extensions 1000 to max;
+}
+
