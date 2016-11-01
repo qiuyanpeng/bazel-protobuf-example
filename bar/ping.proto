@@ -9,7 +9,7 @@ message Ping {
   // See https://developers.google.com/protocol-buffers/docs/proto#extensions
   // for details
   extend foo.Base {
-    optional int32 ping_ext  = 1234;
+    optional Ping ping_ext  = 1234;
     // ... other extensions...
     // one message can extends multiple messages
   }
